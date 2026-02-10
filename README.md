@@ -4,7 +4,7 @@
 but instead you gamble your login and password and you location if you lose your data gets put in a database but
 if you win you get access to that database
 
-> For legal reasons i have to add that we do not condole anything that others make or do with this project **We're just the devs**.
+> **FOR LEGAL REASONS** i have to add that we do not condole anything that others make or do with this project **We're just the devs**.
 
 ---
 
