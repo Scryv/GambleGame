@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<link rel="stylesheet" href="style/style.css">
-  
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamble Gamble</title>
+    <link rel="stylesheet" href="style/style.css">
 
 </head>
+
 <body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">Gamble Gamble</div>
+            <div class="tagline">99% of Gamblers quit before the big win</div>
+        </div>
+
+        <!-- Main Slot Machine -->
+        <div class="slot-machine">
 
 
-<form action="/submit" method='post'>
-  <label for="username">Username:</label><br>
-  <input type="text" value=""><br>
-  <label for="password">Password:</label><br>
-  <input type="text" value=""><br><br>
-  <label for="country">Country:</label><br>
-  <input type="text" value=""><br><br>
-  <input type="submit" value="Submit">
-</form> 
+            <!-- Reels Section -->
+            <div class="reels-section">
+                <div class="reels">
+                    <div class="reel">🍒</div>
+                    <div class="reel">🍋</div>
+                    <div class="reel">🍊</div>
+                </div>
+                <div class="win-line"></div>
+            </div>
 
+            <!-- Controls -->
+            <div class="controls">
+                <div class="tagline">Fill in to start gambling</div>
+                <form action="/submit" method='post'>
+                    <label for="username">Username:</label>
+                    <input type="text">
+                    <label for="password">Password:</label>
+                    <input type="password">
+                    <label for="country">Country:</label>
+                    <input type="text">
+                </form>
+                <button class="spin-button">Spin to Win</button>
+            </div>
 
+            <!-- Message -->
+            <div class="message">
+                Sponsored by Rainbet
+            </div>
+
+        </div>
+    </div>
+    <script src="js/main.js"></script>
 </body>
+
 </html>
