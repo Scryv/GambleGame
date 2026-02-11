@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamble Gamble</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon-32x32.png">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Gamble Gamble</div>
+            <div class="tagline">99% of Gamblers quit before the big win</div>
+        </div>
+
+        <div class="slot-machine">
+
+
+            <div class="reels-section">
+                <div class="reels">
+                    <div class="reel">🍒</div>
+                    <div class="reel">🍋</div>
+                    <div class="reel">🍊</div>
+                </div>
+                <div class="win-line"></div>
+            </div>
+
+            <div class="controls">
+                <div class="tagline">Fill in to start gambling</div>
+<form id="gambleForm" action="/submit" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" name="username"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" name="password"><br><br>
+
+    <label for="country">Country:</label><br>
+    <input type="text" name="country"><br><br>
+    <button class="spin-button">Spin to Win</button>
+
+</form>
+
+
+                
+            </div>
+
+            <div class="message">
+                Sponsored by Rainbet
+            </div>
+
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
+
+
+
