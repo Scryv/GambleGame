@@ -19,7 +19,6 @@ body {
     padding-top: 40px;
 }
 
-/* Header */
 .header {
     text-align: center;
     margin-bottom: 40px;
@@ -39,7 +38,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Main slot machine */
 .slot-machine {
     background: #1a1a2e;
     border-radius: 16px;
@@ -47,7 +45,6 @@ body {
     border: 1px solid #2a2a3e;
 }
 
-/* Stats bar */
 .stats-bar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -81,7 +78,6 @@ body {
     color: #e8b923;
 }
 
-/* Reels section */
 .reels-section {
     background: #0f0f23;
     border-radius: 12px;
@@ -148,13 +144,11 @@ body {
     }
 }
 
-/* Add to .spin-button */
 .spin-button:disabled {
     background: #6b7280;
     cursor: not-allowed;
 }
 
-/* Win line indicator */
 .win-line {
     height: 2px;
     background: #e8b923;
@@ -162,7 +156,6 @@ body {
     opacity: 0.3;
 }
 
-/* Controls */
 .controls {
     display: flex;
     flex-direction: column;
@@ -231,7 +224,6 @@ body {
     text-align: center;
 }
 
-/* Spin button */
 .spin-button {
     background: #e8b923;
     border: none;
@@ -254,7 +246,6 @@ body {
     transform: scale(0.98);
 }
 
-/* Message area */
 .message {
     margin-top: 20px;
     padding: 15px;
@@ -271,7 +262,6 @@ body {
     font-size: 0.9em;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .logo {
         font-size: 2.2em;
@@ -322,7 +312,6 @@ body {
         padding: 18px;
     }
 }
-/* Form styling */
 form {
     background: #0f0f23;
     padding: 25px;
@@ -383,3 +372,4 @@ form input[type="submit"]:hover {
 form input[type="submit"]:active {
     transform: scale(0.98);
 }
+
