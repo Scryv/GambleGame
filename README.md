@@ -1,5 +1,5 @@
 # GambleGamble
-[![GitHub license](https://img.shields.io/github/license/fastfetch-cli/fastfetch)](https://github.com/Scryv/JustTesting/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/fastfetch-cli/fastfetch)](https://github.com/trischlerl22-cmyk/GambleGamble/blob/main/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/trischlerl22-cmyk/GambleGame)](https://github.com/trischlerl22-cmyk/GambleGame/graphs/contributors)<br>
 **GambleGamble** Is an interesting way to gamble, it doesnt take the basic you give money and get broke or get rich
 but instead you gamble your login and password and your location. If you lose, your data gets put in a database but
@@ -26,6 +26,7 @@ git clone https://github.com/trischlerl22-cmyk/GambleGame.git
 cd GambleGame/
 python3 main.py
 ```
+
 
 
 
