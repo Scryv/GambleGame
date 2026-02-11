@@ -1,4 +1,6 @@
 # GambleGamble
+<img src="https://github.com/trischlerl22-cmyk/GambleGame/blob/main/static/imgs/android-chrome-512x512.png" width="200px">
+
 [![GitHub license](https://img.shields.io/github/license/fastfetch-cli/fastfetch)](https://github.com/trischlerl22-cmyk/GambleGamble/blob/main/LICENSE)
 [![GitHub contributors](https://img.shields.io/github/contributors/trischlerl22-cmyk/GambleGame)](https://github.com/trischlerl22-cmyk/GambleGame/graphs/contributors)<br>
 **GambleGamble** Is an interesting way to gamble, it doesnt take the basic you give money and get broke or get rich
@@ -26,6 +28,7 @@ git clone https://github.com/trischlerl22-cmyk/GambleGame.git
 cd GambleGame/
 python3 main.py
 ```
+
 
 
 
