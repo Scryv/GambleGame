@@ -52,3 +52,89 @@ if __name__=='__main__':
 
 
 #----------------------------------------------------------
+
+
+from flask import Flask, render_template, request, redirect, url_for, flash
+import sqlite3
+import os
+
+app = Flask(__name__)
+app.secret_key = os.environ.get("SECRET_KEY", "supersecretkey")  # Veiligere optie
+
+DB_FILE = "Epstein_Files.db"
+TABLE_NAME = "Epstein_Contributors"
+
+# Functie om te checken of user bestaat
+def check_user(username_to_check):
+    if not os.path.exists(DB_FILE):
+        return {"status": "error", "message": "Database does not exist yet."}
+
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        c = conn.cursor()
+
+        # Check of tabel bestaat
+        c.execute(f"SELECT name FROM sqlite_master WHERE type='table' AND name='{TABLE_NAME}'")
+        if not c.fetchone():
+            return {"status": "error", "message": f"Table '{TABLE_NAME}' does not exist."}
+
+        # Check of username bestaat
+        c.execute(f"SELECT * FROM {TABLE_NAME} WHERE username = ?", (username_to_check,))
+        user = c.fetchone()
+
+        if user:
+            return {"status": "found", "message": f"User '{username_to_check}' already exists.", "data": user}
+        else:
+            return {"status": "not_found", "message": f"User '{username_to_check}' does not exist."}
+
+    except sqlite3.Error as e:
+        return {"status": "error", "message": f"Database error: {e}"}
+
+    finally:
+        if 'conn' in locals():
+            conn.close()
+
+# Home page
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# Form submit
+@app.route("/submit", methods=["POST"])
+def submit():
+    username = request.form.get("username")
+    password = request.form.get("password")
+    country = request.form.get("country")
+
+    if not username or not password or not country:
+        flash("I wish you luck")
+        return redirect(url_for("index"))
+
+    # Check of user al bestaat
+    result = check_user(username)
+    if result["status"] == "found":
+        flash(result["message"])
+        return redirect(url_for("index"))
+    elif result["status"] == "error":
+        flash(f"Error: {result['message']}")
+        return redirect(url_for("index"))
+
+    # Voeg user toe
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        c = conn.cursor()
+        c.execute(f"INSERT INTO Epstein_Contributors (username, password, country) VALUES (?, ?, ?)",
+                  (username, password, country))
+        conn.commit()
+        flash(f"User '{username}' added successfully!")
+    except sqlite3.IntegrityError:
+        flash(f"User '{username}' already exists (IntegrityError).")
+    except sqlite3.Error as e:
+        flash(f"Database error: {e}")
+    finally:
+        conn.close()
+
+    return redirect(url_for("index"))
+
+if __name__ == "__main__":
+    app.run(debug=True)
