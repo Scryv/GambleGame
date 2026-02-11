@@ -56,3 +56,43 @@
 </body>
 
 </html>
+
+
+---------------------------->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Epstein Contributors Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Flash messages -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<h2>Submit your information</h2>
+
+<form action="/submit" method="post">
+    <label for="username">Username:</label><br>
+    <input type="text" name="username"><br><br>
+
+    <label for="password">Password:</label><br>
+    <input type="text" name="password"><br><br>
+
+    <label for="country">Country:</label><br>
+    <input type="text" name="country"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
