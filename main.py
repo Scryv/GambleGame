@@ -32,11 +32,9 @@ def results(marks):
 def submit():
     total_score=0
     if request.method=='POST':
-        science=float(request.form['science'])
-        maths=float(request.form['maths'])
-        c=float(request.form['c'])
-        data_science=float(request.form['datascience'])
-        total_score=(science+maths+c+data_science)/4
+        username=request.form['username']
+        password=request.form['password']
+        country=request.form['country']
     
     res=""
     if total_score>=50:
